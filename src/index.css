@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-neutral-900 text-white min-h-screen;
+  background: linear-gradient(to bottom, #000000, #1a1a1a);
+  background-attachment: fixed;
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+  pointer-events: none;
+}
+
+/* Golden glow effects */
+.gold-glow {
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2),
+              0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+              0 0 40px rgba(255, 215, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 0.8);
+}
+
+/* Enhanced input fields */
+input, textarea, select {
+  @apply bg-black/50 border-[#ffd700]/20 text-white focus:border-[#ffd700] focus:ring focus:ring-[#ffd700]/20;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+}
+
+/* Button styles */
+.btn-gold {
+  background: linear-gradient(45deg, #ffd700, #ffed4a);
+  @apply text-black px-6 py-3 rounded-md font-semibold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover:not(:disabled) {
+  background: linear-gradient(45deg, #ffed4a, #ffd700);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-gold:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Card styles */
+.card {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 26, 0.8));
+  @apply rounded-lg border border-[#ffd700]/20 p-8;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+/* Section backgrounds */
+.section-gradient {
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.9),
+    rgba(26, 26, 26, 0.9)
+  );
+  position: relative;
+}
+
+.section-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.8));
+  pointer-events: none;
+}
+
+/* Text styles */
+.text-gold {
+  color: #ffd700;
+}
+
+.hover-text-gold:hover {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .card {
+    @apply p-4;
+  }
+
+  input, textarea, select {
+    @apply text-base;
+  }
+
+  .btn-gold {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Admin panel mobile optimizations */
+.admin-table {
+  @apply w-full overflow-x-auto;
+}
+
+.admin-table-wrapper {
+  @apply min-w-full overflow-hidden;
+}
+
+.admin-card {
+  @apply bg-black/30 rounded-lg border border-[#ffd700]/10 p-4 sm:p-6;
+}
+
+.admin-grid {
+  @apply grid gap-4 sm:gap-6;
+}
+
+.admin-form-group {
+  @apply space-y-2 sm:space-y-4;
+}
+
+.admin-button-group {
+  @apply flex flex-wrap gap-2 sm:gap-4;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}

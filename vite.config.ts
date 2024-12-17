@@ -6,12 +6,14 @@ export default defineConfig({
   server: {
     host: true,
     proxy: {
+      // Прокси для запросов на API
       '/api': {
         target: 'http://localhost:3000',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '/api')
       },
+      // Прокси для запросов на медиафайлы
       '/media': {
         target: 'http://localhost:3000',
         changeOrigin: true,

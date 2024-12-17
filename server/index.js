@@ -497,7 +497,7 @@ app.use('/media', express.static(path.join(__dirname, '../public/media')));
 const startServer = async () => {
   try {
     await initDB();
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 10000;
     app.listen(port, () => {
       console.log(`Сервер запущен на порту ${port}`);
     });

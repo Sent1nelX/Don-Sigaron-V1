@@ -18,6 +18,7 @@ const __dirname = dirname(__filename);
 
 // Инициализация Express
 const app = express();
+const PORT = process.env.PORT || 10000;
 
 // Настройка middleware
 app.use(cors());

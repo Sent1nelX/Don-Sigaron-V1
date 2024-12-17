@@ -7,13 +7,13 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:10000',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '/api')
       },
       '/media': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:10000',
         changeOrigin: true,
         secure: false
       }

@@ -18,20 +18,10 @@ const __dirname = dirname(__filename);
 
 // Инициализация Express
 const app = express();
-const PORT = process.env.PORT || 11000;
 
 // Настройка middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../dist')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/index.html'));
-});
-
-app.listen(PORT, () => {
-  console.log(`Сервер запущен на порту ${PORT}`);
-});
 
 // Настройка загрузки файлов
 const storage = multer.diskStorage({
@@ -507,7 +497,7 @@ app.use('/media', express.static(path.join(__dirname, '../public/media')));
 const startServer = async () => {
   try {
     await initDB();
-    const port = process.env.PORT || 11000;
+    const port = process.env.PORT || 3000;
     app.listen(port, () => {
       console.log(`Сервер запущен на порту ${port}`);
     });

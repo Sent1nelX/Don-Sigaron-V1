@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"node server/index.js\"",
+    "dev": "concurrently \"vite --port 5173\" \"node server/index.js\"",
     "build": "tsc && vite build",
     "start": "node server/index.js",
     "lint": "eslint .",

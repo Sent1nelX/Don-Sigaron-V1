@@ -19,6 +19,9 @@ const __dirname = dirname(__filename);
 // Инициализация Express
 const app = express();
 const PORT = process.env.PORT || 4000;
+const server = app.listen(PORT, () => {
+  console.log(`Сервер запущен на порту ${server.address().port}`);
+});
 
 // Настройка middleware
 app.use(cors());

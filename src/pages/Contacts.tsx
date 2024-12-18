@@ -65,21 +65,23 @@ export default function Contacts() {
               </div>
             </div>
 
-            {/* Правый блок с картой */}
+            {/* Правый блок с рилс */}
             <div className="bg-black/30 p-8 rounded-xl border border-gold/10 shadow-lg">
               <h3 className="text-2xl font-semibold text-white mb-6">Как нас найти?</h3>
               <p className="text-gray-300 mb-4">Мы находимся по адресу:</p>
               <p className="text-gray-300 mb-8">г. Алматы, ул. Розыбакиева, д. 220</p>
 
-              {/* Встроенная карта Яндекс через iframe */}
+              {/* Встроенный рилс Instagram через iframe */}
               <div className="w-full h-64 rounded-lg overflow-hidden shadow-lg">
                 <iframe
+                  src="https://www.instagram.com/p/DAI8sepoPqy/embed"
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  src="https://yandex.kz/maps/org/smoking_shop/58986777211/?ll=76.892339%2C43.222876&z=20"
-                  allowFullScreen
-                  title="Yandex Map"
+                  scrolling="no"
+                  allowTransparency={true}
+                  allow="encrypted-media"
+                  title="Instagram Reel"
                 ></iframe>
               </div>
             </div>

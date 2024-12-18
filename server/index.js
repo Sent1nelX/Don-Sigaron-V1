@@ -176,9 +176,10 @@ app.get('/api/categories', async (req, res) => {
     res.json(result.rows);
   } catch (error) {
     console.error('Ошибка при получении категорий:', error);
-    res.status(500).json({ error: 'Ошибка сервера' });
+    res.status(500).json({ error: 'Ошибка сервера', details: error.message });
   }
 });
+
 
 // Маршруты для работы с товарами
 app.get('/api/products', async (req, res) => {

@@ -7,13 +7,13 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:10000',  // Сервер Node.js должен быть здесь
+        target: 'http://localhost:10000',  // Перенаправляем на правильный порт
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, '/api') // если путь должен оставаться таким же
+        rewrite: (path) => path.replace(/^\/api/, '/api')  // Убедитесь, что путь не меняется
       },
       '/media': {
-        target: 'http://localhost:10000',  // Тот же сервер для медиа
+        target: 'http://localhost:10000',
         changeOrigin: true,
         secure: false
       }

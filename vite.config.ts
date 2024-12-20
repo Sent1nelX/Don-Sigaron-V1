@@ -7,15 +7,15 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:5173',
+        target: 'http://localhost:10000',  // Перенаправляем на сервер Node.js
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, '/api')
+        rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
       '/media': {
-        target: 'http://localhost:5173',
+        target: 'http://localhost:10000',  // Тоже перенаправляем на сервер Node.js
         changeOrigin: true,
-        secure: false
+        secure: false,
       }
     }
   }

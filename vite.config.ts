@@ -5,18 +5,18 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:4000',  // Перенаправляем на правильный порт
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, '/api')  // Убедитесь, что путь не меняется
-      },
-      '/media': {
-        target: 'http://localhost:4000',
-        changeOrigin: true,
-        secure: false
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:4000',  // Перенаправляем на правильный порт
+    //     changeOrigin: true,
+    //     secure: false,
+    //     rewrite: (path) => path.replace(/^\/api/, '/api')  // Убедитесь, что путь не меняется
+    //   },
+    //   '/media': {
+    //     target: 'http://localhost:4000',
+    //     changeOrigin: true,
+    //     secure: false
+    //   }
+    // }
   }
 });

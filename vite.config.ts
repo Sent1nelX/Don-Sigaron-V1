@@ -7,13 +7,13 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:3001',  // Перенаправляем на правильный порт
+        target: 'http://localhost:4000',  // Перенаправляем на правильный порт
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '/api')  // Убедитесь, что путь не меняется
       },
       '/media': {
-        target: 'http://localhost:3001',
+        target: 'http://localhost:4000',
         changeOrigin: true,
         secure: false
       }

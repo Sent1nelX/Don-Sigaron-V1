@@ -18,7 +18,7 @@ const __dirname = dirname(__filename);
 
 // Инициализация Express
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 10000;
 
 
 // Настройка middleware
@@ -500,7 +500,7 @@ app.use('/media', express.static(path.join(__dirname, '../public/media')));
 const startServer = async () => {
   try {
     await initDB();
-    const port = process.env.PORT || 3001;
+    const port = process.env.PORT || 10000;
     app.listen(port, () => {
       console.log(`Сервер запущен на порту ${port}`);
     });
